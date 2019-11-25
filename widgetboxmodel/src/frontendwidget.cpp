@@ -27,10 +27,10 @@
 
 #ifdef __unix__
 #include "xcb/xcb.h"
-#include <X11/extensions/shape.h>
+//#include <X11/extensions/shape.h>
 #undef KeyPress
 #undef KeyRelease
-#include <QtX11Extras/QX11Info>
+//#include <QtX11Extras/QX11Info>
 #endif
 
 
@@ -539,6 +539,7 @@ void WidgetBoxModel::FrontendWidget::resizeEvent(QResizeEvent *event) {
     // Let settingsbutton be in top right corner of frame
     d->settingsButton_->move(d->ui.frame->geometry().topRight() - QPoint(d->settingsButton_->width()-1,0));
 
+    /*
 #ifdef __unix__
     // Keep the input shape consistent
     int shape_event_base, shape_error_base;
@@ -556,7 +557,7 @@ void WidgetBoxModel::FrontendWidget::resizeEvent(QResizeEvent *event) {
         XDestroyRegion(region);
     }
 #endif
-
+*/
     QWidget::resizeEvent(event);
 }
 
